@@ -1,0 +1,339 @@
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0">
+    <title>PROMOTION PREDICTION</title>
+
+
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+
+    <!-- css -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <link rel="stylesheet" href="static/css/styles.css">
+
+
+</head>
+
+<body>
+
+    <!-- As a heading -->
+    <nav class="light-blue lighten-1" role="navigation">
+        <div class="nav-wrapper container"><a id="logo-container" href="#"></a>
+            <ul class="right hide-on-med-and-down">
+                <a class="navbar-brand" href="/"></a>
+            </ul>
+        </div>
+    </nav>
+    
+    
+    <div class="section no-pad-bot" id="index-banner">
+        <div class="container">
+         <h5 style="text-align: center; color: rgb(18, 89, 243); font-weight: 500;">{{pred}}</h5>
+          <h1 class="header center black-text">PROMOTION PREDICTION (using AI in the background)</h1>
+          <div class="row center">
+            <h5 class="header col s12 light">Predict the probability of being promoted</h5>
+            <br>
+            </h5>
+          </div>
+          
+         
+    
+    <br><br><br>
+
+
+    
+
+
+
+        <form action="/predict" method="post">
+
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Department</h5>
+                            <!-- Department -->
+                            <select name="1" id="Department" required="required">
+                                <option value="Sales & Marketing">Sales&Marketing</option>
+                                <option value="Operations">Operations</option>
+                                <option value="Technology">Technology</option>
+                                <option value="Analytics">Analytics</option>
+                                <option value="HR">HR</option>
+                                <option value="R&D">R&D</option>
+                                <option value="Procurement">Procurement</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Legal">Legal</option>
+                            </select>    
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Education</h5>
+                            <!-- education -->
+                            <select name="2" id="Education" required="required">
+                                <option value="Bachelor's">Bachelor's</option>
+                                <option value="Master's & above">Master's & above</option>
+                                <option value="Below Secondary">Below Secondary</option>
+                            </select>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- gender -->
+                            <h5 class="card-title">Gender</h5>
+                            <select name="3" id="Gender" required="required">
+                                <option value="m">m</option>
+                                <option value="f">f</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Recruitment_channel</h5>
+                            <!-- recruitment_channel -->
+                            <select name="4" id="Recruitment_channel" required="required">
+                                <option value="sourcing">sourcing</option>
+                                <option value="referred">referred</option>
+                                <option value="other">other</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">No_of_trainings</h5>
+                            <!-- no_of_trainings-->
+                            <select name="5" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                                <option value="6">6</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
+                                <option value="10">10</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Age (20-60)</h5>
+                            <!-- age -->
+                            <label for="Age"></b></label>
+                            <input placeholder="Age" name="6" id="Age" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- previous_year_rating -->
+                            <h5 class="card-title">Previous_year_rating</h5>
+                            <select name="7" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Length_of_service (1-37)</h5>
+                            <!-- length_of_service -->
+                            <label for="Length_of_service"></b></label>
+                            <input placeholder="Length_of_service" name="8" id="Length_of_service" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- KPIs_met_above_80percent -->
+                            <h5 class="card-title">KPIs_met_above_80percent</h5>
+                            <select name="9" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Awards_won</h5>
+                            <!-- awards_won? -->
+                            <select name="10" required="required">
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+            
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <!-- avg_training_score -->
+                            <h5 class="card-title">Avg_training_score (39-99)</h5>
+                            <label for="Avg_training_score"></b></label>
+                            <input placeholder="Avg_training_score" name="11" id="Avg_training_score" type="text" class="validate">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Region</h5>
+                            <!-- is_promoted -->
+                            <select name="12" id="Region"  required="required">
+                                <option value="region_1">region_1</option>
+                                <option value="region_2">region_2</option>
+                                <option value="region_3">region_3</option>
+                                <option value="region_4">region_4</option>
+                                <option value="region_5">region_5</option>
+                                <option value="region_6">region_6</option>
+                                <option value="region_7">region_7</option>
+                                <option value="region_8">region_8</option>
+                                <option value="region_9">region_9</option>
+                                <option value="region_10">region_10</option>
+                                <option value="region_11">region_11</option>
+                                <option value="region_12">region_12</option>
+                                <option value="region_13">region_13</option>
+                                <option value="region_14">region_14</option>
+                                <option value="region_15">region_15</option>
+                                <option value="region_16">region_16</option>
+                                <option value="region_17">region_17</option>
+                                <option value="region_18">region_18</option>
+                                <option value="region_19">region_19</option>
+                                <option value="region_20">region_20</option>
+                                <option value="region_21">region_21</option>
+                                <option value="region_22">region_22</option>
+                                <option value="region_23">region_23</option>
+                                <option value="region_24">region_24</option>
+                                <option value="region_25">region_25</option>
+                                <option value="region_26">region_26</option>
+                                <option value="region_27">region_27</option>
+                                <option value="region_28">region_28</option>
+                                <option value="region_29">region_29</option>
+                                <option value="region_30">region_30</option>
+                                <option value="region_31">region_31</option>
+                                <option value="region_32">region_32</option>
+                                <option value="region_33">region_33</option>
+                                <option value="region_34">region_34</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <br>
+            <br>
+            <br>
+
+            <!-- Submit -->
+            <div class="row center">
+    
+                <button type="submit" class="btn-large waves-effect waves-light light-green">Submit and predict probability</button>
+  
+            </div>
+        </form>
+
+        <br>
+        <br>
+        <h3>{{ prediction_text }}</h3>
+
+        <br>
+        <br>
+        <p>&copy; vishnu P P</p>
+        <p>vishnugirishvichu@gmail.com</p>
+
+        </div>
+    </div>
+
+
+
+
+    <!-- JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
